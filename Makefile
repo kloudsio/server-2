@@ -17,6 +17,6 @@ node_modules: package.json
 
 dev:
 	# Starting development server
-	@iojs bootstrap.js
+	@ nodemon bootstrap.js
 
 .PHONY: dev

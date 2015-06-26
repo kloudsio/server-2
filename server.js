@@ -69,10 +69,10 @@ let loginRoute = {
     var password = this.request.body.password;
 
     var user = yield usersDb.findOne({ email: email });
-    this.assert(user, 401, 'authentication failed');
+    this.assert(user, 401, 'Incorrect Email or Password');
 
     var valid = yield pswd.compare(password, user.password);
-    this.assert(valid, 401, 'authentication failed');
+    this.assert(valid, 401, 'Incorrect Email or Password');
 
     this.body = authorize(user);
 
